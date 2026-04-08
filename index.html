@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,41 +8,97 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.4/css/all.min.css" integrity="sha512-p1CmKaE0XbZxkQH0x4Ai+G+8G8bLXMzmZ16eQutP0vFyJrYFPymDPiwz+5KyyA3IhZ0QYDG2++uhnM4YBf37wg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a href="#" class="brand">
-        <div class="brand-mark">UTS</div>
+        <div class="brand-mark"><img src="images/logo.png" alt="Ugrata Security Solutions Logo"></div>
         <div>
           <p class="brand-name">Ugrata Security Solutions</p>
           <p class="brand-tag">(OPC) Pvt. Ltd.</p>
         </div>
       </a>
       <nav class="main-nav" id="mainNav">
-        <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#about">About</a>
-        <a href="#certification">ISO</a>
-        <a href="#contact">Contact</a>
+        <ul>
+          <li class="has-submenu">
+            <a href="#services">Services</a>
+            <ul class="submenu">
+              <li><a href="#security">Security</a></li>
+              <li><a href="#housekeeping">Housekeeping</a></li>
+              <li><a href="#manpower">Manpower</a></li>
+            </ul>
+          </li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#certification">ISO</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
+
       <button class="nav-toggle" aria-label="Toggle navigation" id="navToggle">
         <i class="fas fa-bars"></i>
       </button>
     </div>
   </header>
 
+  <!-- Hero Carousel -->
+  <section class="hero-carousel">
+    <div class="carousel-container">
+      <div class="carousel-slide active" style="background-image: url('images/slide1.jpg');">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <h1>Your Safety is Our Priority</h1>
+          <p>24/7 protection for your business and home with trained security personnel</p>
+          <a href="#services" class="btn btn-primary">Explore Services</a>
+        </div>
+      </div>
+      <div class="carousel-slide" style="background-image: url('images/slide2.jpg');">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <h1>Expert Housekeeping Services</h1>
+          <p>Clean and hygienic spaces with our professional housekeeping team</p>
+          <a href="#services" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+      <div class="carousel-slide" style="background-image: url('images/slider3.webp');">
+        <div class="carousel-overlay"></div>
+        <div class="carousel-content">
+          <h1>Reliable Manpower Solutions</h1>
+          <p>Skilled workforce for events, facilities, and industrial operations</p>
+          <a href="#services" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-nav">
+      <button class="carousel-btn prev" aria-label="Previous slide">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="carousel-indicators">
+        <span class="indicator active" data-slide="0"></span>
+        <span class="indicator" data-slide="1"></span>
+        <span class="indicator" data-slide="2"></span>
+      </div>
+      <button class="carousel-btn next" aria-label="Next slide">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+
   <main>
-    <section class="hero section-gradient">
+    <section class="hero section-gradient fade-in-up">
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Trusted Protection | Expert Support</p>
           <h1>Delhi's premier security, housekeeping, and manpower partner.</h1>
-          <p class="hero-text">Reliable corporate security services, professional housekeeping solutions, and trained manpower for residential and commercial needs.</p>
+          <p class="hero-text">Reliable <i class="fas fa-user-shield"></i> corporate security services, professional <i class="fa-solid fa-person-military-pointing"></i> housekeeping solutions, and trained <i class="fas fa-users"></i> manpower for
+            residential and commercial needs.</p>
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Call Now <i class="fas fa-phone-alt"></i></a>
+            <a href="#contact" class="btn btn-primary">Call Now <i class="fas fa-phone"></i></a>
             <a href="#contact" class="btn btn-secondary">Contact Us <i class="fas fa-envelope"></i></a>
           </div>
           <div class="hero-meta">
@@ -56,8 +113,10 @@
           </div>
         </div>
         <div class="hero-image-card">
-          <div class="image-badge"><i class="fas fa-shield-alt"></i> Security First</div>
-          <div class="hero-image"></div>
+          <!-- <div class="image-badge"><i class="fas fa-shield"></i> Security First</div> -->
+          <div class="hero-image">
+            
+          </div>
         </div>
       </div>
     </section>
@@ -68,20 +127,23 @@
         <h2>Comprehensive services designed for your peace of mind.</h2>
       </div>
       <div class="services-grid">
-        <article class="service-card">
-          <div class="service-icon"><i class="fas fa-user-shield"></i></div>
+        <article class="service-card" id="security">
+          <div class="service-icon"><i class="fas fa-shield"></i></div>
           <h3>Security Services</h3>
-          <p>24/7 trained guards, CCTV monitoring, access control and site patrols for every corporate and residential environment.</p>
+          <p>24/7 trained guards, CCTV monitoring, access control and site patrols for every corporate and residential
+            environment.</p>
         </article>
-        <article class="service-card">
+        <article class="service-card" id="housekeeping">
           <div class="service-icon"><i class="fas fa-broom"></i></div>
           <h3>Housekeeping</h3>
-          <p>Professional housekeeping support for commercial buildings, offices, and gated communities with consistent quality standards.</p>
+          <p>Professional housekeeping support for commercial buildings, offices, and gated communities with consistent
+            quality standards.</p>
         </article>
-        <article class="service-card">
+        <article class="service-card" id="manpower">
           <div class="service-icon"><i class="fas fa-users"></i></div>
           <h3>Manpower Supply</h3>
-          <p>Reliable manpower staffing solutions for events, facilities, hospitality, and industrial operations with verified personnel.</p>
+          <p>Reliable manpower staffing solutions for events, facilities, hospitality, and industrial operations with
+            verified personnel.</p>
         </article>
       </div>
     </section>
@@ -94,33 +156,41 @@
         </div>
         <div class="gallery-grid">
           <div class="gallery-item">
-            <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="gallery-image"
+              style="background-image: url('images/corporate.webp');">
+            </div>
             <div class="gallery-overlay">
-              <h3>Corporate Security</h3>
+              <h3><i class="fas fa-building"></i>Corporate Security</h3>
               <p>24/7 protection for business premises</p>
             </div>
           </div>
           <div class="gallery-item">
-            <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="gallery-image"
+              style="background-image: url('images/cleaner.webp');">
+            </div>
             <div class="gallery-overlay">
-              <h3>Office Cleaning</h3>
+              <h3><i class="fas fa-broom"></i>Office Cleaning</h3>
               <p>Professional housekeeping services</p>
             </div>
           </div>
           <div class="gallery-item">
-            <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="gallery-image"
+              style="background-image: url('images/evventmanger.webp');">
+            </div>
             <div class="gallery-overlay">
-              <h3>Event Security</h3>
+              <h3><i class="fas fa-users"></i>Event Security</h3>
               <p>Manpower for special occasions</p>
             </div>
           </div>
-          <div class="gallery-item">
-            <div class="gallery-image" style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&w=800&q=80');"></div>
+          <!-- <div class="gallery-item">
+            <div class="gallery-image"
+              style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&w=800&q=80');">
+            </div>
             <div class="gallery-overlay">
-              <h3>Residential Security</h3>
+              <h3><i class="fas fa-home"></i>Residential Security</h3>
               <p>Safe and secure living spaces</p>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -130,11 +200,17 @@
         <div class="about-copy">
           <p class="eyebrow">About Us</p>
           <h2>Professional security and support services with a local Delhi presence.</h2>
-          <p>Ugrata Security Solutions is an ISO-certified company specializing in security, housekeeping, and manpower services. We deliver disciplined teams with strong customer commitment across corporate, residential, and industrial clients.</p>
+          <p>Ugrata Security Solutions is an ISO-certified company specializing in:</p>
+<ul class="services-list">
+  <li><i class="fas fa-user-shield"></i> Security</li>
+  <li><i class="fas fa-broom"></i> Housekeeping</li>
+  <li><i class="fas fa-users"></i> Manpower Services</li>
+</ul>
+<p>We deliver disciplined teams with strong customer commitment across corporate, residential, and industrial clients.</p>
           <ul class="about-list">
-            <li><i class="fas fa-check-circle"></i> Experienced security personnel with modern protocols.</li>
-            <li><i class="fas fa-check-circle"></i> Structured housekeeping schedules and quality checks.</li>
-            <li><i class="fas fa-check-circle"></i> Flexible workforce tailored to client needs.</li>
+            <li><i class="fas fa-user-shield"></i> Experienced security personnel with modern protocols.</li>
+            <li><i class="fas fa-broom"></i> Structured housekeeping schedules and quality checks.</li>
+            <li><i class="fas fa-users"></i> Flexible workforce tailored to client needs.</li>
           </ul>
         </div>
         <div class="about-image"></div>
@@ -146,7 +222,8 @@
         <div>
           <p class="eyebrow">ISO Certified</p>
           <h2>ISO 9001:2015 Certified Security & Facility Services</h2>
-          <p>Quality-driven operations, process discipline, and customer-centric service delivery are at the heart of our certified management systems.</p>
+          <p>Quality-driven operations, process discipline, and customer-centric service delivery are at the heart of
+            our certified management systems.</p>
         </div>
         <div class="certification-badge">
           <i class="fas fa-certificate"></i>
@@ -163,7 +240,8 @@
         <div class="contact-copy">
           <p class="eyebrow">Get in Touch</p>
           <h2>Reach out for a tailored security and manpower proposal.</h2>
-          <p>We provide prompt response, custom consultation, and reliable support for contracts of all sizes in Delhi and NCR.</p>
+          <p>We provide prompt response, custom consultation, and reliable support for contracts of all sizes in Delhi
+            and NCR.</p>
           <div class="contact-cards">
             <div class="contact-card">
               <i class="fas fa-phone"></i>
@@ -211,4 +289,5 @@
 
   <script src="js/script.js"></script>
 </body>
+
 </html>

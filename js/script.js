@@ -69,3 +69,84 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// Hero Carousel Functionality
+class HeroCarousel {
+  constructor() {
+    this.slides = document.querySelectorAll('.carousel-slide');
+    this.indicators = document.querySelectorAll('.indicator');
+    this.prevBtn = document.querySelector('.carousel-btn.prev');
+    this.nextBtn = document.querySelector('.carousel-btn.next');
+    this.currentSlide = 0;
+    this.slideCount = this.slides.length;
+    this.autoPlayInterval = null;
+    this.autoPlayDelay = 2000; // 2 seconds
+
+    this.init();
+  }
+
+  init() {
+    // Set up event listeners
+    this.prevBtn.addEventListener('click', () => this.prevSlide());
+    this.nextBtn.addEventListener('click', () => this.nextSlide());
+
+    this.indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => this.goToSlide(index));
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') this.prevSlide();
+      if (e.key === 'ArrowRight') this.nextSlide();
+    });
+
+    // Start autoplay
+    this.startAutoPlay();
+
+    // Pause autoplay on hover
+    const carousel = document.querySelector('.hero-carousel');
+    carousel.addEventListener('mouseenter', () => this.stopAutoPlay());
+    carousel.addEventListener('mouseleave', () => this.startAutoPlay());
+  }
+
+  goToSlide(index) {
+    // Remove active class from current slide and indicator
+    this.slides[this.currentSlide].classList.remove('active');
+    this.indicators[this.currentSlide].classList.remove('active');
+
+    // Update current slide
+    this.currentSlide = index;
+
+    // Add active class to new slide and indicator
+    this.slides[this.currentSlide].classList.add('active');
+    this.indicators[this.currentSlide].classList.add('active');
+  }
+
+  nextSlide() {
+    const nextIndex = (this.currentSlide + 1) % this.slideCount;
+    this.goToSlide(nextIndex);
+  }
+
+  prevSlide() {
+    const prevIndex = (this.currentSlide - 1 + this.slideCount) % this.slideCount;
+    this.goToSlide(prevIndex);
+  }
+
+  startAutoPlay() {
+    this.autoPlayInterval = setInterval(() => {
+      this.nextSlide();
+    }, this.autoPlayDelay);
+  }
+
+  stopAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+      this.autoPlayInterval = null;
+    }
+  }
+}
+
+// Initialize carousel when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  new HeroCarousel();
+});
